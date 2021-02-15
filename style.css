@@ -8,6 +8,12 @@ h2, h3 {
     text-align: center;
 }
 
+.p-custom {
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
 .h2-custom {
     margin-top: 50px;
 }
