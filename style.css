@@ -8,6 +8,9 @@ h2, h3 {
     text-align: center;
 }
 
+div {
+    align-items: center;
+}
 .p-custom {
     text-align: center;
     margin-left: 250px;
@@ -26,6 +29,9 @@ a {
     text-decoration: none;
 }
 
+form {
+    text-align: center;
+}
 .bar {
     margin-bottom: 150px;
     overflow: auto;
