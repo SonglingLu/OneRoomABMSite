@@ -37,44 +37,47 @@
             <h1>Simulation Demonstration</h1>
             <p class="p-custom">This section will likely contain a visual (likely a video or if possible, an embedded slider) for the room simulation. Another possibility is a live demo in which the user can specify the parameters and create a simulation on the spot.</p>
             <p class="p-custom">Parameter Inputs</p>
-            <div style="margin-left:510px ;width:500px;height:750px;border:1px solid #000;">
+            <div style="margin-left:510px ;width:500px;height:850px;border:1px solid #000;">
                 <br>
                 <form>
                     <label for="floorarea">Floor Area (square ft):</label><br>
-                    <input type="number" id="floorarea" name="floorarea" min="70" value="900"><br><br>
+                    <input type="number" id="floorarea" name="floorarea" min="70" value="900" step=".001"><br><br>
                     
                     <label for="ceilinght">Ceiling Height (ft):</label><br>
-                    <input type="number" id="ceilinght" name="ceilinght" min="7" value="12"><br><br>
+                    <input type="number" id="ceilinght" name="ceilinght" min="7" value="12" step=".001"><br><br>
                     
                     <label for="ach">Air Exchange Rate (ACH):</label><br>
-                    <input type="number" id="ach" name="ach" min="0" value="3"><br><br>
+                    <input type="number" id="ach" name="ach" min="0" value="3" step=".001"><br><br>
                     
                     <label for="airfraction">Outdoor Air Fraction:</label><br>
-                    <input type="number" id="airfraction" name="airfraction" min="0" value="0.2"><br><br>
+                    <input type="number" id="airfraction" name="airfraction" min="0" value="0.2" step=".001"><br><br>
                     
                     <label for="aero">Aerosol Filtration:</label><br>
-                    <input type="number" id="aero" name="aero" min="0" value="0"><br><br>
+                    <input type="number" id="aero" name="aero" min="0" value="0" step=".001"><br><br>
 
                     <label for="hum">Relative Humidity:</label><br>
-                    <input type="number" id="hum" name="hum" min="0" value="0.69"><br><br>
+                    <input type="number" id="hum" name="hum" min="0" value="0.69" step=".001"><br><br>
 
                     <label for="breath">Breathing Flow Rate (m3 per hr):</label><br>
-                    <input type="number" id="breath" name="breath" min="0" value="0.5"><br><br>
+                    <input type="number" id="breath" name="breath" min="0" value="0.5" step=".001"><br><br>
                     
                     <label for="rad">Max Aerosol Radius (um):</label><br>
-                    <input type="number" id="rad" name="rad" min="0" value="2"><br><br>
+                    <input type="number" id="rad" name="rad" min="0" value="2" step=".001"><br><br>
 
                     <label for="quanta">Exhaled Air Infection (quanta per m3):</label><br>
-                    <input type="number" id="quanta" name="quanta" min="0" value="30"><br><br>
+                    <input type="number" id="quanta" name="quanta" min="0" value="30" step=".001"><br><br>
 
                     <label for="deact">Max Viral Deactivation Rate:</label><br>
-                    <input type="number" id="deact" name="deact" min="0" value="0.3"><br><br>
+                    <input type="number" id="deact" name="deact" min="0" value="0.3" step=".001"><br><br>
 
                     <label for="mask">Mask Passage Probability:</label><br>
-                    <input type="number" id="mask" name="mask" min="0" value="0.1"><br><br>
+                    <input type="number" id="mask" name="mask" min="0" value="0.1" step=".001"><br><br>
 
                     <label for="risk">Risk Tolerance:</label><br>
-                    <input type="number" id="risk" name="risk" min="0" value="0.1"><br><br>
+                    <input type="number" id="risk" name="risk" min="0" value="0.1" step=".001"><br><br>
+
+                    <br>
+                    <input type="submit" value="Submit">
 
                 </form>
             </div>
