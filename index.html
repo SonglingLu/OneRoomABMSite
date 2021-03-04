@@ -36,7 +36,68 @@
             <br>
             <h1>Simulation Demonstration</h1>
             <p class="p-custom">This section will likely contain a visual (likely a video or if possible, an embedded slider) for the room simulation. Another possibility is a live demo in which the user can specify the parameters and create a simulation on the spot.</p>
-            <p class="p-custom">Parameter Inputs</p>
+            
+            <p class="p-custom">Room Parameters</p>
+            <div style="margin-left:510px ;width:500px;height:550px;border:1px solid #000;">
+                <br>
+                <form>
+                    <b>Number of People</b><br>
+                    <input type="radio" id="10" name="numpeople" value="10">
+                    <label for="10">10</label><br>
+                    <input type="radio" id="25" name="numpeople" value="25">
+                    <label for="25">25</label><br>
+                    <input type="radio" id="40" name="numpeople" value="40">
+                    <label for="40">40</label>
+
+                    <br>
+                    <br>
+
+                    <b>Mask Type</b><br>
+                    <input type="radio" id="nomask" name="masktype" value="No mask">
+                    <label for="nomask">No mask</label><br>
+                    <input type="radio" id="n95" name="masktype" value="N95">
+                    <label for="n95">N95</label><br>
+                    <input type="radio" id="other" name="masktype" value="Other">
+                    <label for="other">40</label>
+
+                    <br>
+                    <br>
+
+                    <b>Number of Days</b><br>
+                    <input type="radio" id="1" name="nday" value="1">
+                    <label for="1">1</label><br>
+                    <input type="radio" id="3" name="nday" value="3">
+                    <label for="3">3</label><br>
+                    <input type="radio" id="5" name="nday" value="5">
+                    <label for="5">5</label>
+
+                    <br>
+                    <br>
+
+                    <b>Number of Classes per day</b><br>
+                    <input type="radio" id="1" name="nclass" value="3">
+                    <label for="3">3</label><br>
+                    <input type="radio" id="3" name="nclass" value="5">
+                    <label for="5">5</label><br>
+                    <input type="radio" id="5" name="nclass" value="7">
+                    <label for="7">7</label>
+
+                    <br>
+                    <br>
+
+                    <b>Include Air Filter</b><br>
+                    <input type="radio" id="y" name="air" value="Yes">
+                    <label for="y">Yes</label><br>
+                    <input type="radio" id="3" name="air" value="No">
+                    <label for="n">No</label><br>
+
+                    <br>
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+
+            <p class="p-custom">Advanced Inputs</p>
             <div style="margin-left:510px ;width:500px;height:850px;border:1px solid #000;">
                 <br>
                 <form>
@@ -76,10 +137,14 @@
                     <label for="risk">Risk Tolerance:</label><br>
                     <input type="number" id="risk" name="risk" min="0" value="0.1" step=".001"><br><br>
 
+
                     <br>
                     <input type="submit" value="Submit">
 
                 </form>
+            </div>
+            <div class="line">
+                <div class="grid-item-2" id="lineChart"></div>
             </div>
             <br>
             <br>
@@ -101,5 +166,6 @@
             <h1>Contact Us</h1>
             <p class="p-custom">Email addresses, GitHub repos, other sites for our section.</p>
         </main>
+        <script src="scripts/main.js"></script> 
     </body>
 </html>

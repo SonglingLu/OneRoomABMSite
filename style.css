@@ -21,6 +21,13 @@ div {
     margin-top: 50px;
 }
 
+#radio-group{
+    display:inline-block
+}
+#label{
+    vertical-align:top;
+}
+
 .line {
     margin-bottom: 150px;
 }
@@ -57,10 +64,6 @@ main {
     font-size: 35px;
     font-weight: bold;
     text-align: center;
-}
-
-b {
-    color: red;
 }
 
 .center {
