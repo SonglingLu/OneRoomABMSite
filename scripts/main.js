@@ -4,12 +4,25 @@ async function loadJSON(path) {
 	return dataset;
 }
 
-function init() {
-	yearsPromise = loadJSON('./data/year_counts.json');
-	yearsPromise.then(function (year) {
-		plotYearSales(year);
-	});
-};
+
+var formParams = []
+
+function submitEntry() {
+	var numPeople = document.getElementsByName('numpeople');
+
+	for (var i = 0, length = numPeople.length; i < length; i++) {
+	if (numPeople[i].checked) {
+		// do whatever you want with the checked radio
+		formParams.append(numPeople[i]);
+
+		// only one radio can be logically checked, don't check the rest
+		break;
+		}
+	}
+
+}
+
+console.log()
 
 function plotYearSales(yearSales) {
 
@@ -147,6 +160,5 @@ function plotYearSales(yearSales) {
 			}
 		}],
 	});
-
 
 	document.addEventListener('DOMContentLoaded', init, false);}

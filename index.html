@@ -41,6 +41,7 @@
             <div style="margin-left:510px ;width:500px;height:550px;border:1px solid #000;">
                 <br>
                 <form>
+                    
                     <b>Number of People</b><br>
                     <input type="radio" id="10" name="numpeople" value="10">
                     <label for="10">10</label><br>
@@ -92,10 +93,112 @@
                     <label for="n">No</label><br>
 
                     <br>
-                    <input type="submit" value="Submit">
+                    <button type="button" id="submitbutton" class="button-success pure-button" disabled onclick="submitEntry()">Submit</button>
 
                 </form>
             </div>
+
+            <br>
+            <br>
+        
+            <p class="p-custom">Result</p>
+
+            <canvas class="canvas-room" id="myCanvas" width="400" height="400" style="border:3px solid #000000;">
+            </canvas>
+
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.rect(0, 20, 20, 100);
+                ctx.stroke();
+            </script>
+
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.rect(0, 150, 20, 100);
+                ctx.stroke();
+            </script>
+
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.rect(0, 280, 20, 100);
+                ctx.stroke();
+            </script>
+
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.rect(60, 385, 75, 15);
+                ctx.stroke();
+            </script>
+            
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(345, 65, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(255, 65, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(165, 65, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(345, 150, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(255, 150, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(165, 150, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(345, 235, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(255, 235, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(165, 235, 25, 0, 2 * Math.PI);
+                ctx.stroke();
+
+            </script> 
+
+            <br>
+            <br>
+            <br>
+            <br>
 
             <p class="p-custom">Advanced Inputs</p>
             <div style="margin-left:510px ;width:500px;height:850px;border:1px solid #000;">
