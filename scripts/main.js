@@ -5,24 +5,20 @@ async function loadJSON(path) {
 }
 
 
-var formParams = []
+var form = document.querySelector("form");
+var log = document.querySelector("#log");
 
-function submitEntry() {
-	var numPeople = document.getElementsByName('numpeople');
-
-	for (var i = 0, length = numPeople.length; i < length; i++) {
-	if (numPeople[i].checked) {
-		// do whatever you want with the checked radio
-		formParams.append(numPeople[i]);
-
-		// only one radio can be logically checked, don't check the rest
-		break;
-		}
-	}
-
-}
-
-console.log()
+form.addEventListener("submit", function(event) {
+  var data = new FormData(form);
+  var output = "";
+  for (const entry of data) {
+	// output = output + entry[0] + "=" + entry[1] + "\r";
+	output = output + entry[1] + "\r";
+  };
+//   log.innerText = output;
+log.innerText = output;
+  event.preventDefault();
+}, false);
 
 function plotYearSales(yearSales) {
 
