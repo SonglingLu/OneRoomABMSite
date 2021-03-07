@@ -31,17 +31,21 @@ function makePlot() {
 	var form = document.querySelector("form");
 	var log = document.querySelector("#log");
 	var checked_radios = document.querySelectorAll('input[type=radio]:checked');
-	var chk1 = checked_radios[0].value
-	var chk2 = checked_radios[1].value
-	var chk3 = checked_radios[2].value
-	var chk4 = checked_radios[3].value
-	var chk5 = checked_radios[4].value
+	
+	var chk1 = checked_radios[0].value // 10, 25, 40
+	var chk2 = checked_radios[1].value // no mask, n95, 40
+	var chk3 = checked_radios[2].value // 1, 3, 5
+	var chk4 = checked_radios[3].value // 3, 5, 7
+	var chk5 = checked_radios[4].value // yes, no
 
+	var pointSize = 3
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
+	
+	ctx.fillStyle = "#ff2626";
 	ctx.beginPath();
-	ctx.rect(0, 20, 5, 10);
-	ctx.stroke();
+	ctx.arc(100, 200, 3, 0, 2 * Math.PI);
+	ctx.fill();
 }
 
 function plotYearSales(yearSales) {
