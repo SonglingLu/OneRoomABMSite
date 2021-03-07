@@ -3,22 +3,28 @@ async function loadJSON(path) {
 	let dataset = await response.json(); // Now available in global scope
 	return dataset;
 }
+function Check(x) {
+	var button = document.getElementById("submit");
+	var form = document.querySelector("form");
+	var log = document.querySelector("#log");
+	var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
 
-
-var form = document.querySelector("form");
-var log = document.querySelector("#log");
-
-form.addEventListener("submit", function(event) {
-  var data = new FormData(form);
-  var output = "";
-  for (const entry of data) {
-	// output = output + entry[0] + "=" + entry[1] + "\r";
-	output = output + entry[1] + "\r";
-  };
-//   log.innerText = output;
-log.innerText = output;
-  event.preventDefault();
-}, false);
+	if (nbr_checked_radios == 5) {
+		button.disabled = false;
+	}
+	
+	form.addEventListener("submit", function(event) {
+		var data = new FormData(form);
+		var output = "";
+		for (const entry of data) {
+		  // output = output + entry[0] + "=" + entry[1] + "\r";
+		  output = output + entry[1] + "\r";
+		};
+	  //   log.innerText = output;
+	  log.innerText = nbr_checked_radios;
+		event.preventDefault();
+	  }, false);
+}
 
 function plotYearSales(yearSales) {
 

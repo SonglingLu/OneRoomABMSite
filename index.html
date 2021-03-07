@@ -43,57 +43,57 @@
                 <form>
                     
                     <b>Number of People</b><br>
-                    <input type="radio" id="10" name="numpeople" value="10">
+                    <input type="radio" id="10" name="numpeople" value="10" onclick="Check(this)">
                     <label for="10">10</label><br>
-                    <input type="radio" id="25" name="numpeople" value="25">
+                    <input type="radio" id="25" name="numpeople" value="25" onclick="Check(this)">
                     <label for="25">25</label><br>
-                    <input type="radio" id="40" name="numpeople" value="40">
+                    <input type="radio" id="40" name="numpeople" value="40" onclick="Check(this)">
                     <label for="40">40</label>
 
                     <br>
                     <br>
 
                     <b>Mask Type</b><br>
-                    <input type="radio" id="nomask" name="masktype" value="No mask">
+                    <input type="radio" id="nomask" name="masktype" value="No mask" onclick="Check(this)">
                     <label for="nomask">No mask</label><br>
-                    <input type="radio" id="n95" name="masktype" value="N95">
+                    <input type="radio" id="n95" name="masktype" value="N95" onclick="Check(this)">
                     <label for="n95">N95</label><br>
-                    <input type="radio" id="other" name="masktype" value="Other">
+                    <input type="radio" id="other" name="masktype" value="Other" onclick="Check(this)">
                     <label for="other">40</label>
 
                     <br>
                     <br>
 
                     <b>Number of Days</b><br>
-                    <input type="radio" id="1" name="nday" value="1">
+                    <input type="radio" id="1" name="nday" value="1" onclick="Check(this)">
                     <label for="1">1</label><br>
-                    <input type="radio" id="3" name="nday" value="3">
+                    <input type="radio" id="3" name="nday" value="3" onclick="Check(this)">
                     <label for="3">3</label><br>
-                    <input type="radio" id="5" name="nday" value="5">
+                    <input type="radio" id="5" name="nday" value="5" onclick="Check(this)">
                     <label for="5">5</label>
 
                     <br>
                     <br>
 
                     <b>Number of Classes per day</b><br>
-                    <input type="radio" id="1" name="nclass" value="3">
+                    <input type="radio" id="1" name="nclass" value="3" onclick="Check(this)">
                     <label for="3">3</label><br>
-                    <input type="radio" id="3" name="nclass" value="5">
+                    <input type="radio" id="3" name="nclass" value="5" onclick="Check(this)">
                     <label for="5">5</label><br>
-                    <input type="radio" id="5" name="nclass" value="7">
+                    <input type="radio" id="5" name="nclass" value="7" onclick="Check(this)">
                     <label for="7">7</label>
 
                     <br>
                     <br>
 
                     <b>Include Air Filter</b><br>
-                    <input type="radio" id="y" name="air" value="Yes">
+                    <input type="radio" id="y" name="air" value="Yes" onclick="Check(this)">
                     <label for="y">Yes</label><br>
-                    <input type="radio" id="3" name="air" value="No">
+                    <input type="radio" id="3" name="air" value="No" onclick="Check(this)">
                     <label for="n">No</label><br>
 
                     <br>
-                    <button type="submit">Submit</button>
+                    <button id="submit" type="submit" disabled>Submit</button>
                     <!-- <button type="button" id="submitbutton" class="button-success pure-button" disabled onclick="submitEntry()">Submit</button> -->
 
                 </form>
