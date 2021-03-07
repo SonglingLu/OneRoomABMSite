@@ -7,12 +7,12 @@ function Check(x) {
 	var button = document.getElementById("submit");
 	var form = document.querySelector("form");
 	var log = document.querySelector("#log");
+	var checked_radios = document.querySelectorAll('input[type=radio]:checked');
 	var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
 
 	if (nbr_checked_radios == 5) {
 		button.disabled = false;
 	}
-	
 	form.addEventListener("submit", function(event) {
 		var data = new FormData(form);
 		var output = "";
@@ -21,9 +21,27 @@ function Check(x) {
 		  output = output + entry[1] + "\r";
 		};
 	  //   log.innerText = output;
-	  log.innerText = nbr_checked_radios;
+	//   log.innerText = checked_radios[0].value;
 		event.preventDefault();
 	  }, false);
+}
+
+function makePlot() {
+	var button = document.getElementById("submit");
+	var form = document.querySelector("form");
+	var log = document.querySelector("#log");
+	var checked_radios = document.querySelectorAll('input[type=radio]:checked');
+	var chk1 = checked_radios[0].value
+	var chk2 = checked_radios[1].value
+	var chk3 = checked_radios[2].value
+	var chk4 = checked_radios[3].value
+	var chk5 = checked_radios[4].value
+
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.rect(0, 20, 5, 10);
+	ctx.stroke();
 }
 
 function plotYearSales(yearSales) {
