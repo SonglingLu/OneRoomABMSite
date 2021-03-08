@@ -42,9 +42,10 @@ function makePlot() {
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	
-	ctx.fillStyle = "#ff2626";
+	for (const x of)
+	ctx.fillStyle = "#000000";
 	ctx.beginPath();
-	ctx.arc(100, 200, 3, 0, 2 * Math.PI);
+	ctx.arc(160, 275, 3, 0, 2 * Math.PI);
 	ctx.fill();
 }
 
