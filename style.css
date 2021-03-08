@@ -42,9 +42,9 @@ a {
     text-decoration: none;
 }
 
-form {
-    text-align: center;
-}
+/* form {
+    margin-left: 215px;
+} */
 .bar {
     margin-bottom: 150px;
     overflow: auto;
