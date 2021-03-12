@@ -31,23 +31,21 @@
             <p class="p-custom1">Our model is scaled-down to represent a single room for simplicity. The assumptions and calculations made are based on findings from the <a href="https://www.medrxiv.org/content/10.1101/2020.08.26.20182824v4 ">MIT Indoor Safety Guidelines</a> and <a href="https://airborne.cam/airbornedotcam.pdf">Cambridge models</a>. We implemented the parameters given by the MIT model, specfically physical room dimensions and physiological factors (human and virus). We validated our calculations with the plots provided by the airborne.cam tool. </p>
             <h3>Assumptions</h3>
             
-            <p class="p-custom1">
-                <ul>
-                    <li>Agents remain in place for all model runs</li>
-                    <li>In an actual school setting, agents (humans) are more likely to be spaced apart (seating charts) during class than walking around (providing variable distances)</li>
-                    <li>Mask wearing reduces risk of infection by 50%</li>
-                    <li>A student becoming symptomatic will be removed from the environment as soon as they are detected</li>
-                    <li>We are assuming that without a source of ventilation or filtration, a room will be considered to be well mixed.</li>
-                </ul>
-            </p>
+            
+            <ul>
+                <li>Agents remain in place for all model runs</li>
+                <li>In an actual school setting, agents (humans) are more likely to be spaced apart (seating charts) during class than walking around (providing variable distances)</li>
+                <li>Mask wearing reduces risk of infection by 50%</li>
+                <li>A student becoming symptomatic will be removed from the environment as soon as they are detected</li>
+                <li>We are assuming that without a source of ventilation or filtration, a room will be considered to be well mixed.</li>
+            </ul>
+            
 
             <h3>Constraints</h3>
-            <p class="p-custom1">
-                <ul>
-                    <li>Infectiousness of viral particles is an ongoing field of study. The thorough methodology of the ‘Chen’ study, providing model parameters such as ‘Inhalation fraction’ (used for mask usage), ‘Thermal conductivity of air [Watts * meter^-1 * Kelvin^-1]’, and ‘[exhaled] air jet initial momentum [meters^4 * seconds^-2]</li>
-                    <li>As viral load deposition at a distance is not the primary function of this model (and as our model has to be run in time steps), the computation necessary for adding the first model’s parameters to ours is prohibitive, leading us to use their conclusions and cite their workings as a source instead.</li>
-                </ul>
-            </p>
+            <ul>
+                <li>Infectiousness of viral particles is an ongoing field of study. The thorough methodology of the ‘Chen’ study, providing model parameters such as ‘Inhalation fraction’ (used for mask usage), ‘Thermal conductivity of air [Watts * meter^-1 * Kelvin^-1]’, and ‘[exhaled] air jet initial momentum [meters^4 * seconds^-2]</li>
+                <li>As viral load deposition at a distance is not the primary function of this model (and as our model has to be run in time steps), the computation necessary for adding the first model’s parameters to ours is prohibitive, leading us to use their conclusions and cite their workings as a source instead.</li>
+            </ul>
 
             <h3>Well-mixed Room</h3>
             <p class="p-custom1">
@@ -272,17 +270,17 @@
             </div> -->
             <br>
             <h1>Mitigation Strategies</h1>
-            <p class="p-custom1">
-                <ul class="li-custom">
-                    <li class="li-custom">Seating Charts for optimized distance between students</li>
-                    <li class="li-custom">Barriers to interrupt airflow or block launched virions</li>
-                    <li class="li-custom">Mask types</li>
-                    <li class="li-custom">Class length / School day length</li>
-                    <li class="li-custom">Class size</li>
-                    <li class="li-custom">Open vs closed windows</li>
-                    <li class="li-custom">Ventilation</li>
-                </ul>
-            </p>
+            
+            <ul class="li-custom">
+                <li class="li-custom">Seating Charts for optimized distance between students</li>
+                <li class="li-custom">Barriers to interrupt airflow or block launched virions</li>
+                <li class="li-custom">Mask types</li>
+                <li class="li-custom">Class length / School day length</li>
+                <li class="li-custom">Class size</li>
+                <li class="li-custom">Open vs closed windows</li>
+                <li class="li-custom">Ventilation</li>
+            </ul>
+            
             <br>
             
             <h1>Conclusion</h1>
