@@ -13,46 +13,69 @@
         <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body >
         <header>
-            <br>
             <img class="center" src="images/oneroomabm.PNG" alt="OneRoomABM" width="300">
             <h1>One Room ABM (Agent-based Modeling)</h1>
             <h2>Credits:</h2>
-            <h3>Bailey Man, Michael Kusnadi, Songling Lu, Eric Yu</h3>
+            <p class="names">Bailey Man, Michael Kusnadi, Songling Lu, Eric Yu</p>
         </header>
 
         <main>
-            <br>
             <h1>Introduction</h1>
-            <p class="p-custom">Several models exist for the transmission of SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2) based on varying assumptions and parameters. The significance of this problem is that because models vary depending on the parameters and underlying assumptions, there is uncertainty on how to filter out the valid and optimal inputs. In this replication study, we develop a simple infection rate model based on the results and parameters reported by current research.
+            <p class="p-custom1">Several models exist for the transmission of SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2) based on varying assumptions and parameters. The Chu and Chen models investigate coronavirus transmission and infection as functions of nonpharmaceutical interventions (physical distances, masks) and respiratory droplets, respectively. The results of the Chu model suggest guidelines for social distancing (1 meter or more) between individuals and public usage of facial and eye protection, while the Chen model shows the relationship between droplet size and transmission range. The two models both attempt to examine coronavirus transmission, but they report results that are not necessarily conflicting, but rather, incomplete on their own. The significance of this problem is that because models vary depending on the parameters and underlying assumptions, there is uncertainty on how to filter out the valid and optimal inputs. In this replication study, we develop a simple infection rate model based on the results and parameters reported by the Chu and Chen models, the MIT COVID-19 Indoor Safety Tool, and the airborne.cam tool by Cambridge.
+                The output of this experiment will be primarily a simulation where a user will be able to set parameters to see the resulting risks and infections caused by in person instructions. This report will be a secondary output along with the website and visual presentation and will be used as a guide to explain methods as well as theory behind the work.
             </p>
             <br>
-            <br>
-            <br>
             <h1>Our Research</h1>
-            <p class="p-custom">Our model is scaled-down to represent a single room for simplicity. The assumptions and calculations made are based on findings from the <a href="https://www.medrxiv.org/content/10.1101/2020.08.26.20182824v4 ">MIT Indoor Safety Guidelines</a> and <a href="https://airborne.cam/airbornedotcam.pdf">Cambridge models</a>. We implemented the parameters given by the MIT model, specfically physical room dimensions and physiological factors (human and virus). We validated our calculations with the plots provided by the airborne.cam tool.</p>
+            <p class="p-custom1">Our model is scaled-down to represent a single room for simplicity. The assumptions and calculations made are based on findings from the <a href="https://www.medrxiv.org/content/10.1101/2020.08.26.20182824v4 ">MIT Indoor Safety Guidelines</a> and <a href="https://airborne.cam/airbornedotcam.pdf">Cambridge models</a>. We implemented the parameters given by the MIT model, specfically physical room dimensions and physiological factors (human and virus). We validated our calculations with the plots provided by the airborne.cam tool.
+            <h3>Assumptions</h3>
+            <p class="p-custom1">
+                <ul>
+                    <li>Agents remain in place for all model runs</li>
+                    <li>In an actual school setting, agents (humans) are more likely to be spaced apart (seating charts) during class than walking around (providing variable distances)</li>
+                    <li>Mask wearing reduces risk of infection by 50%</li>
+                    <li>A student becoming symptomatic will be removed from the environment as soon as they are detected</li>
+                    <li>We are assuming that without a source of ventilation or filtration, a room will be considered to be well mixed.</li>
+                </ul>
+            </p>
+
+            <h3>Constraints</h3>
+            <p class="p-custom1">
+                <ul>
+                    <li>Infectiousness of viral particles is an ongoing field of study. The thorough methodology of the ‘Chen’ study, providing model parameters such as ‘Inhalation fraction’ (used for mask usage), ‘Thermal conductivity of air [Watts * meter^-1 * Kelvin^-1]’, and ‘[exhaled] air jet initial momentum [meters^4 * seconds^-2]</li>
+                    <li>As viral load deposition at a distance is not the primary function of this model (and as our model has to be run in time steps), the computation necessary for adding the first model’s parameters to ours is prohibitive, leading us to use their conclusions and cite their workings as a source instead.</li>
+                </ul>
+            </p>
+
+            <h3>Well-mixed Room</h3>
+            <p class="p-custom1">
+                The definition of a room that is well mixed is that the pathogen is distributed uniformly throughout the room (Bazant)[3]. Furthermore according to Bazant, one is no safer from airborne pathogens at 60 feet than 6 feet. This renders the Six-Foot Rule somewhat ineffective to reduce the spread of the Covid-19 Viruses. Bazant’s theory can be further supported with data presented in Sture Holmberg and Qingyan Chen’s simulations of  different ventilation systems in the classroom.[6] In the result of their simulation, a classroom with mix ventilation system implemented will have a roughly uniform distribution of aerosol particles across the room. Since most mechanical ventilation systems in real life like air conditioners are designed to realize mix ventilation, it is reasonable to assume that school classrooms will be under such mix ventilation conditions. Therefore, the well-mixed room theory is well supported and it is safe to implement the MIT model in our one room modeling.
+                Within our model, we are assuming that all rooms are initially well mixed given no ventilation or air filtration. This is because we want to make sure that our simulation gives the safest results. “Experts agree that good ventilation is the most effective and practical way to rid a space of contaminants.”(Bartzokas) Without ventilation any infected patient will in time be able to spread the virus all around the room due to there being no fresh intake of air nor any action to clean the air up. Many of the papers that have been referenced agree and follow this idea due to it being the most realistic idea to follow as well. The implementation of ventilation will allow us to more accurately gauge the risk of having in person instructions and measure how severe it would be as well.  
+            </p>
+            <h3>Mask Wearing</h3>
+            <p class="p-custom1">
+                Understanding the capability of the masks in this pandemic is one important thing in making epidemic prevention decisions and policies. Many health authorities suggested that masks are able to prevent sick patients from spreading the virus to others by filtering out the virus from their exhaled breath. “Results clearly indicate that wearing surgical masks or unvented KN95 respirators reduce the outward particle emission rates by 90% and 74% on average during speaking and coughing, respectively, compared to wearing no mask.” These results further highlight the importance and significance of mask wearing and therefore we will also replicate this fact into our model.
+            </p>
+
             <br>
-            <br>
-            <br>
-            <h1>Simulation Demonstration</h1>
-            <p class="p-custom">This section will likely contain a visual (likely a video or if possible, an embedded slider) for the room simulation. Another possibility is a live demo in which the user can specify the parameters and create a simulation on the spot.</p>
+
+            <h1>Example Outputs</h1>
+            <!-- <p class="p-custom">This section will likely contain a visual (likely a video or if possible, an embedded slider) for the room simulation. Another possibility is a live demo in which the user can specify the parameters and create a simulation on the spot.</p> -->
             
-            <p class="p-custom">Room Parameters</p>
-            <div style="margin-left:510px ;width:500px;height:550px;border:1px solid #000;">
+            <div style="margin-left:510px ;width:500px;height:232px;border:1px solid #000;">
                 <br>
                 <form>
                     
-                    <b style="margin-left: 182px;">Number of People</b><br>
-                    <input type="radio" id="10" name="numpeople" value="10" onclick="Check(this)" style="margin-left: 235px;">
-                    <label for="10">10</label><br>
-                    <input type="radio" id="25" name="numpeople" value="25" onclick="Check(this)" style="margin-left: 235px;">
-                    <label for="25">25</label><br>
-                    <input type="radio" id="40" name="numpeople" value="40" onclick="Check(this)" style="margin-left: 235px;">
-                    <label for="40">40</label>
+                    <b style="margin-left: 128px;">Level of Preventative Measures</b><br><br>
+                    <input type="radio" id="low" name="demo" value="low" onclick="Check(this)" style="margin-left: 128px;">
+                    <label for="low">0% Masks, Movement/Activity</label><br><br>
+                    <input type="radio" id="mid" name="demo" value="mid" onclick="Check(this)" style="margin-left: 128px;">
+                    <label for="mid">90% Masks, Some Movement/Activity</label><br><br>
+                    <input type="radio" id="high" name="demo" value="high" onclick="Check(this)" style="margin-left: 128px;">
+                    <label for="high">100% Masks, No Movement/Activity</label> <br>
 
-                    <br>
-                    <br>
+                    <!-- <br>
 
                     <b style="margin-left: 210px;">Mask Type</b><br>
                     <input type="radio" id="nomask" name="masktype" value="No mask" onclick="Check(this)" style="margin-left: 235px;">
@@ -62,7 +85,6 @@
                     <input type="radio" id="other" name="masktype" value="Other" onclick="Check(this)" style="margin-left: 235px;">
                     <label for="other">Other</label>
 
-                    <br>
                     <br>
 
                     <b style="margin-left: 185px;">Number of Days</b><br>
@@ -74,7 +96,6 @@
                     <label for="5d">5</label>
 
                     <br>
-                    <br>
 
                     <b style="margin-left: 150px;">Number of Classes per day</b><br>
                     <input type="radio" id="3c" name="nclass" value="3" onclick="Check(this)" style="margin-left: 235px;">
@@ -85,13 +106,12 @@
                     <label for="7c">7</label>
 
                     <br>
-                    <br>
 
                     <b style="margin-left: 190px;">Include Air Filter</b><br>
                     <input type="radio" id="y" name="air" value="Yes" onclick="Check(this)" style="margin-left: 235px;">
                     <label for="y">Yes</label><br>
                     <input type="radio" id="n" name="air" value="No" onclick="Check(this)" style="margin-left: 235px;">
-                    <label for="n">No</label><br>
+                    <label for="n">No</label><br> -->
 
                     <br>
                     <button id="submit" type="submit" disabled onclick="makePlot()" style="margin-left: 215px;">Submit</button>
@@ -101,11 +121,14 @@
             </div>
 
             <br>
-            <br>
         
-            <p class="p-custom">Result</p>
-
-            <canvas class="canvas-room" id="myCanvas" width="400" height="400" style="border:3px solid #000000;">
+            <p class="p-custom"><b>Resulting Plot</b></p>
+            <div style="margin-left:510px ;width:500px;height:450px;border:1px solid #000;">
+            <img id="image1" src="./images/image1.png" style="display:none;"/>
+            <img id="image2" src="./images/image2.png" style="display:none;"/>
+            <img id="image3" src="./images/image3.png" style="display:none;"/>
+            </div>
+            <!-- <canvas class="canvas-room" id="myCanvas" width="400" height="400" style="border:3px solid #000000;">
             </canvas>
 
             <script>
@@ -138,9 +161,9 @@
                 ctx.beginPath();
                 ctx.rect(60, 385, 75, 15);
                 ctx.stroke();
-            </script>
+            </script> -->
             
-            <script>
+            <!-- <script>
                 var c = document.getElementById("myCanvas");
                 var ctx = c.getContext("2d");
                 ctx.beginPath();
@@ -195,12 +218,7 @@
                 ctx.arc(165, 235, 25, 0, 2 * Math.PI);
                 ctx.stroke();
 
-            </script> 
-
-            <br>
-            <br>
-            <br>
-            <br>
+            </script>  -->
 
             <!-- <p class="p-custom">Advanced Inputs</p>
             <div style="margin-left:510px ;width:500px;height:850px;border:1px solid #000;">
@@ -255,14 +273,30 @@
             <br>
             <br>
             <h1>Mitigation Strategies</h1>
-            <p class="p-custom">This section will cover mitigation strategies, for example masks, occupancy limits, ventilation, etc. based on our findings.</p>
+            <p class="p-custom1">
+                <ul class="li-custom">
+                    <li class="li-custom">Seating Charts for optimized distance between students</li>
+                    <li class="li-custom">Barriers to interrupt airflow or block launched virions</li>
+                    <li class="li-custom">Mask types</li>
+                    <li class="li-custom">Class length / School day length</li>
+                    <li class="li-custom">Class size</li>
+                    <li class="li-custom">Open vs closed windows</li>
+                    <li class="li-custom">Ventilation</li>
+                </ul>
+            </p>
             <br>
+            
+            <h1>Conclusion</h1>
+            <p class="p-custom1">
+                
+                    The main purpose of this project is to create and verify assumptions/prior research and simulate the protocols currently used to facilitate limited in-person learning.
+                    The other purpose is to verify the implementation of existing and supplemental code in SchoolABM.
+                    For classrooms, ventilation and air exchange rate are key parameters to focus on improving to reduce COVID infections.
+                    For buses, seating plans and open windows are the primary recommended intervention methods.
+                    These recommendations come with the assumption that current mandates are being followed to a relatively high degree.
+            </p>
             <br>
-            <h1>Additional Resources</h1>
-            <p class="p-custom">This section will cover material that is directly related to our work but not necessarily implemented. This would include more information on preventing infections, links to more investigations, etc.</p>
-            <br>
-            <br>
-            <br>
+
             <h1>References</h1>
             <p class="p-custom">
                 <a href="https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2931142-9">Physical distancing, face masks, and eye protection to prevent person-to-person transmission of SARS-CoV-2 and COVID-19: a systematic review and meta-analysis <br>
