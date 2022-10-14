@@ -1,4 +1,6 @@
 # Room ABM Site
-Webpage: https://ery010.github.io/OneRoomABMSite/
+Webpage: [Result Report](https://ery010.github.io/OneRoomABMSite/)
 
-Check out Report.pdf
+Results and conclusions in Report.pdf
+
+Check out [GeoACT](https://geoact.sdsc.edu/), Geographically Assisted Agent-based Model for COVID-19 Transmission. Our model aided in the construction of it.
